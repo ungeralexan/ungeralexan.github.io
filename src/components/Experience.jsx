@@ -1,17 +1,16 @@
 function Experience() {
   return (
-    <section id="experience" className="section">
-      <h3>Experience</h3>
+    <section id="experience" style={{ padding: "40px" }}>
+      <h2>Experience</h2>
 
-      <div className="timeline-item">
-        <h4>Data Science in Business and Economics</h4>
-        <p className="muted">Student</p>
-        <p>
-          Building a foundation in data analysis, machine learning, economics,
-          and quantitative methods with a growing interest in finance-related
-          applications.
-        </p>
-      </div>
+      <h3>Working Student – Data Science & Analytics</h3>
+      <p>Mercedes-Benz AG</p>
+
+      <ul>
+        <li>Applied regression and machine learning methods</li>
+        <li>Built and improved data pipelines</li>
+        <li>Analyzed customer behavior and feedback data</li>
+      </ul>
     </section>
   );
 }
