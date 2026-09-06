@@ -1,21 +1,41 @@
+import useReveal from "../hooks/useReveal";
+import useTilt from "../hooks/useTilt";
+
+const ITEMS = [
+  "Machine Learning",
+  "Deep Learning",
+  "Finance",
+  "Time Series",
+  "Economic Data",
+  "Quantitative Analysis",
+];
+
+function FocusCard({ item }) {
+  const { ref, onMouseMove, onMouseLeave } = useTilt(8);
+  return (
+    <div
+      className="card"
+      ref={ref}
+      onMouseMove={onMouseMove}
+      onMouseLeave={onMouseLeave}
+    >
+      {item}
+    </div>
+  );
+}
+
 function Focus() {
-  const items = [
-    "Machine Learning",
-    "Deep Learning",
-    "Finance",
-    "Time Series",
-    "Economic Data",
-    "Quantitative Analysis",
-  ];
+  const reveal = useReveal();
 
   return (
-    <section id="focus" className="section">
-      <h3>Focus Areas</h3>
+    <section id="focus" className="section reveal" ref={reveal}>
+      <div className="section-head">
+        <div className="section-eyebrow">Areas of expertise</div>
+        <h3>Focus Areas</h3>
+      </div>
       <div className="card-grid">
-        {items.map((item) => (
-          <div key={item} className="card">
-            {item}
-          </div>
+        {ITEMS.map((item) => (
+          <FocusCard key={item} item={item} />
         ))}
       </div>
     </section>
